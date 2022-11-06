@@ -1,5 +1,4 @@
 import { Component } from "react";
-import BarraNavegacao from "./barraNavegacao";
 
 type props = {
     tema: string
@@ -9,10 +8,8 @@ export default class FormularioCadastroProduto extends Component<any, props> {
 
     render() {
         let estiloBotao = `btn waves-effect waves-light ${this.props.tema}`
-        let barraNavegacao = <BarraNavegacao tema="purple lighten-4"/>
         return (
             <>
-            {barraNavegacao}
                 <div className="row">
                     <form className="col s12">
                         <div className="row">

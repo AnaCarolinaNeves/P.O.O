@@ -1,5 +1,4 @@
 import { Component } from "react";
-import BarraNavegacao from './barraNavegacao';
 
  type props = {
     tema: string 
@@ -9,10 +8,8 @@ export default class FormularioCadastroCliente extends Component<any, props> {
 
     render() {
         let estiloBotao = `btn waves-effect waves-light ${this.props.tema}`
-        let barraNavegacao = <BarraNavegacao tema="purple lighten-4"/>
         return (
             <>
-            {barraNavegacao}
                 <div className="row">
                     <form className="col s12">
                         <div className="row">
@@ -31,7 +28,7 @@ export default class FormularioCadastroCliente extends Component<any, props> {
                                 <label htmlFor="data_nascimento">Data de nascimento</label>
                             </div>
                             <div className="input-field col s6">
-                                <input id="cpf" type="email" className="validate" />
+                                <input id="cpf" type="text" className="validate" />
                                 <label htmlFor="cpf">CPF</label>
                             </div>
                         </div>
