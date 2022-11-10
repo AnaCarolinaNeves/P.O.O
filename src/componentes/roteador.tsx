@@ -6,6 +6,8 @@ import ListaProduto from "../paginas/listaProduto";
 import FormularioCadastroProduto from "../paginas/formularioCadastroProduto";
 import FormularioCadastroServico from "../paginas/formularioCadastroServico";
 import ListaServico from "../paginas/listaServico";
+import Listagem from "../paginas/listagem";
+import RegistrarCompra from "../paginas/registrarCompra";
 
 type state = {
     tela: string
@@ -29,7 +31,8 @@ export default class Roteador extends Component<{}, state> {
     }
 
     render() {
-        let barraNavegacao = <BarraNavegacao tema="#f06292 pink lighten-2" botoes={['Clientes', 'Cadastrar cliente', 'Produtos', 'Cadastrar produto', 'Serviços', 'Cadastrar serviços']} seletorView={this.selecionarView} />
+        let barraNavegacao = <BarraNavegacao tema="#f06292 pink lighten-2" botoes={['Clientes', 'Cadastrar cliente', 'Produtos', 'Cadastrar produto', 'Serviços', 
+        'Cadastrar serviço', 'Registrar compra', 'Listagem' ]} seletorView={this.selecionarView} />
         if (this.state.tela === "Clientes") {
             return (
                 <>
@@ -69,11 +72,27 @@ export default class Roteador extends Component<{}, state> {
                 </>
             )
         }
-        else if (this.state.tela === 'Cadastrar serviços') {
+        else if (this.state.tela === 'Cadastrar serviço') {
             return (
                 <>
                     {barraNavegacao}
                     <FormularioCadastroServico tema="#f06292 pink lighten-2" />
+                </>
+            )
+        }
+        else if (this.state.tela === 'Listagem') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <Listagem  tema="#f06292 pink lighten-2" />
+                </>
+            )
+        }
+        else if (this.state.tela === 'Registrar compra') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <RegistrarCompra tema="#f06292 pink lighten-2" />
                 </>
             )
         }
