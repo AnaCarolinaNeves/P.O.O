@@ -22,11 +22,11 @@ export default class Listagem extends Component<any>{
                             <li className="tab col s3"><a href="#clientesMenosConsumiram">Clientes que menos consumiram</a></li>
                         </ul>
                     </div>
-    
+
                     {/* Clientes que mais consumiram */}
-                    <div id="clientesMaisConsumiram" className="col s12">
+                    <div id="clientesMaisConsumiram" >
                         <div className="row">
-                            <div className="col s6">
+                            <div className="col s12" >
                                 <table className="centered responsive-table ">
                                     <thead>
                                         <tr>
@@ -36,7 +36,7 @@ export default class Listagem extends Component<any>{
                                             <th>Qtd serviços utilizados</th>
                                         </tr>
                                     </thead>
-    
+
                                     <tbody>
                                         <tr>
                                             <td>1</td>
@@ -56,12 +56,13 @@ export default class Listagem extends Component<any>{
                                             <td>8</td>
                                             <td>8</td>
                                         </tr>
-    
                                     </tbody>
                                 </table>
                             </div>
-    
-                            <div className="col s6">
+                        </div>
+                        <hr></hr>
+                        <div className="row">
+                            <div className="col s12" >
                                 <table className="centered responsive-table ">
                                     <thead>
                                         <tr>
@@ -71,7 +72,7 @@ export default class Listagem extends Component<any>{
                                             <th>Valor total de serviços utilizados</th>
                                         </tr>
                                     </thead>
-    
+
                                     <tbody>
                                         <tr>
                                             <td>1</td>
@@ -107,7 +108,7 @@ export default class Listagem extends Component<any>{
                                             <th>Gênero</th>
                                         </tr>
                                     </thead>
-    
+
                                     <tbody>
                                         <tr>
                                             <td>Jeniffer</td>
@@ -136,7 +137,7 @@ export default class Listagem extends Component<any>{
                                             <th>Gênero</th>
                                         </tr>
                                     </thead>
-    
+
                                     <tbody>
                                         <tr>
                                             <td>Shampoo</td>
@@ -149,7 +150,7 @@ export default class Listagem extends Component<any>{
                                     </tbody>
                                 </table>
                             </div>
-    
+
                             <div className="col s6" >
                                 <table className="centered responsive-table ">
                                     <thead>
@@ -158,7 +159,7 @@ export default class Listagem extends Component<any>{
                                             <th>Gênero</th>
                                         </tr>
                                     </thead>
-    
+
                                     <tbody>
                                         <tr>
                                             <td>Pedicure</td>
@@ -173,11 +174,11 @@ export default class Listagem extends Component<any>{
                             </div>
                         </div>
                     </div>
-    
+
                     {/* Serviços e produtos mais consumidos */}
                     <div id="produtosServicosMaisConsumidos" className="col s12">
                         <div className="row" >
-                            <div className="col s6" >
+                            <div className="col s12">
                                 <table className="centered responsive-table ">
                                     <thead>
                                         <tr>
@@ -185,7 +186,7 @@ export default class Listagem extends Component<any>{
                                             <th>Qtd de pedidos</th>
                                         </tr>
                                     </thead>
-    
+
                                     <tbody>
                                         <tr>
                                             <td>Shampoo</td>
@@ -198,8 +199,10 @@ export default class Listagem extends Component<any>{
                                     </tbody>
                                 </table>
                             </div>
-    
-                            <div className="col s6" >
+                        </div>
+                        <hr></hr>
+                        <div className="row">
+                            <div className="col s12">
                                 <table className="centered responsive-table ">
                                     <thead>
                                         <tr>
@@ -207,7 +210,7 @@ export default class Listagem extends Component<any>{
                                             <th>Qtd de pedidos</th>
                                         </tr>
                                     </thead>
-    
+
                                     <tbody>
                                         <tr>
                                             <td>Pedicure</td>
@@ -222,44 +225,44 @@ export default class Listagem extends Component<any>{
                             </div>
                         </div>
                     </div>
-    
+
                     {/* Clientes que menos consumiram */}
                     <div id="clientesMenosConsumiram" className="col s12">
-                    <div className="row">
-                                <div className="col s12">
-                                    <table className="centered responsive-table ">
-                                        <thead>
-                                            <tr>
-                                                <th>N°</th>
-                                                <th>Nome</th>
-                                                <th>Qtd produtos consumidos</th>
-                                                <th>Qtd serviços utilizados</th>
-                                            </tr>
-                                        </thead>
-    
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Apolo</td>
-                                                <td>5</td>
-                                                <td>4</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Jeniffer</td>
-                                                <td>7</td>
-                                                <td>6</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Ana</td>
-                                                <td>8</td>
-                                                <td>9</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                        <div className="row">
+                            <div className="col s12">
+                                <table className="centered responsive-table ">
+                                    <thead>
+                                        <tr>
+                                            <th>N°</th>
+                                            <th>Nome</th>
+                                            <th>Qtd produtos consumidos</th>
+                                            <th>Qtd serviços utilizados</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Apolo</td>
+                                            <td>5</td>
+                                            <td>4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Jeniffer</td>
+                                            <td>7</td>
+                                            <td>6</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Ana</td>
+                                            <td>8</td>
+                                            <td>9</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
+                        </div>
                     </div>
                 </div>
             </>
