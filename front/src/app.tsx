@@ -1,7 +1,6 @@
 import { Component } from "react";
 import { Navigate, Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router-dom";
-import EdicaoCliente from "./componentes/edicaoCliente";
 import FormularioCadastroCliente from "./componentes/formularioCadastroCliente";
 import Home from "./componentes/home";
 import ListaCliente from "./componentes/listaCliente";
@@ -17,7 +16,6 @@ class App extends Component{
                 <Route path="*" element={<Navigate to="/" />} />
                 <Route path="/formularioCadastroCliente" element={<FormularioCadastroCliente />} />
                 <Route path="/listaCliente" element={<ListaCliente />} />
-                <Route path="/edicaoCliente" element={<EdicaoCliente />} />
             </Routes>
         </BrowserRouter></>
         )

@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Component } from "react";
+import Swal from "sweetalert2";
 import CadastradorCliente from "../cadastradores/cadastradorCliente";
 import Endereco from "./endereco";
 import Telefone from "./telefone";
-
 
 class FormularioCadastroCliente extends Component {
     private nome: string
@@ -19,7 +19,6 @@ class FormularioCadastroCliente extends Component {
         this.capturarNome = this.capturarNome.bind(this)
         this.capturarSobreNome = this.capturarSobreNome.bind(this)
         this.capturarEmail = this.capturarEmail.bind(this)
-        // this.capturarEndereco = this.capturarEndereco.bind(this)
         this.capturarEnderecoEstado = this.capturarEnderecoEstado.bind(this)
         this.capturarEnderecoCidade = this.capturarEnderecoCidade.bind(this)
         this.capturarEnderecoBairro = this.capturarEnderecoBairro.bind(this)
@@ -97,6 +96,11 @@ class FormularioCadastroCliente extends Component {
         }
         this.cadastrarCliente(cliente)
         evento.target.reset()
+        Swal.fire(
+            'Cliente cadastrado com sucesso',
+            '',
+            'success'
+        )
     }
     render() {
         return (
