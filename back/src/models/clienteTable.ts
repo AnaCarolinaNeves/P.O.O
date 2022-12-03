@@ -26,6 +26,18 @@ const cadastroCliente = connection.define("cadastroCliente", {
     genero: {
         type:sequelize.STRING,
         allowNull: false
+    },
+    rg: {
+        type:sequelize.STRING,
+        allowNull: false
+    },
+    ddd: {
+        type:sequelize.STRING,
+        allowNull: false
+    },
+    numero: {
+        type:sequelize.STRING,
+        allowNull: false
     }
 })
 cadastroCliente.sync({ alter: true });

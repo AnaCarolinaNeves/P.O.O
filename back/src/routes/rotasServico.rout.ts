@@ -1,32 +1,32 @@
 import { Router, Request, Response, NextFunction } from "express";
 import { StatusCodes } from "http-status-codes";
 
-const rotasCliente = Router()
-const tabelaCli = require("../models/clienteTable")
+const rotasServico = Router()
+const tabelaSer = require("../models/servicoTable")
 
-rotasCliente.get("/Clientes", async(req:Request, res: Response, next: NextFunction) =>{
-    const clientesLista = await tabelaCli.findAll()
-    res.status(StatusCodes.OK).send(clientesLista)
+rotasServico.get("/Servicos", async(req:Request, res: Response, next: NextFunction) =>{
+    const servicosLista = await tabelaSer.findAll()
+    res.status(StatusCodes.OK).send(servicosLista)
 })
 
-rotasCliente.get('/Clientes/:uuid', async(req: Request<{ uuid: string }>, res: Response, next: NextFunction)=>{
+rotasServico.get('/Servicos/:uuid', async(req: Request<{ uuid: string }>, res: Response, next: NextFunction)=>{
     const uuid = req.params.uuid;
-    const project = await tabelaCli.findOne({ where: { id: uuid } })
+    const project = await tabelaSer.findOne({ where: { id: uuid } })
     
     if (project === null) {
         return res.status(StatusCodes.NOT_FOUND).json({
             erro: true,
-            mensagem: "Usuario não cadastrado!"
+            mensagem: "Serviço não cadastrado!"
         })
     } else {
         return res.json(project)
     }
 })
 
-rotasCliente.post("/CadastroCliente", async (req:Request, res: Response, next: NextFunction) =>{
-    const cadastroCliente = req.body;
+rotasServico.post("/cadastroServico", async (req:Request, res: Response, next: NextFunction) =>{
+    const cadastroServico = req.body;
 
-    await tabelaCli.create(cadastroCliente).then((Sucesso) => {
+    await tabelaSer.create(cadastroServico).then((Sucesso) => {
         return res.json({
             erro: false,
             mensagem: "Cadastro realizado com sucesso!"
@@ -39,12 +39,12 @@ rotasCliente.post("/CadastroCliente", async (req:Request, res: Response, next: N
 
     })
 })
-rotasCliente.put("/AtualizaCliente/:uuid", async (req:Request, res: Response, next: NextFunction) =>{
+rotasServico.put("/AtualizaServico/:uuid", async (req:Request, res: Response, next: NextFunction) =>{
     const uuid = req.params.uuid;
     const corpo = req.body;
 
     corpo.uuid = uuid;
-    await tabelaCli.update(corpo, {
+    await tabelaSer.update(corpo, {
         //comando para o sql
         where: {
             id: uuid
@@ -63,12 +63,12 @@ rotasCliente.put("/AtualizaCliente/:uuid", async (req:Request, res: Response, ne
     })
 
 })
-rotasCliente.delete("/DeletaCliente/:uuid", async (req:Request, res: Response, next: NextFunction) =>{
+rotasServico.delete("/DeletaServico/:uuid", async (req:Request, res: Response, next: NextFunction) =>{
     const uuid = req.params.uuid;
     const corpo = req.body;
 
     corpo.uuid = uuid;
-    await tabelaCli.destroy( {
+    await tabelaSer.destroy( {
         where: {
             id: uuid
         }
@@ -88,4 +88,4 @@ rotasCliente.delete("/DeletaCliente/:uuid", async (req:Request, res: Response, n
 })
 
 
-export default rotasCliente
+export default rotasServico
